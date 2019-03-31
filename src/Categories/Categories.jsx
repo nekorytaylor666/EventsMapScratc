@@ -9,7 +9,7 @@ export class Categories extends Component {
 						<i className="fas fa-guitar orange f1 pa3" />
 					</Category>
 					<Category>
-						<i className="fas fa-guitar orange f1 pa3" />
+						<i className="fas fa-paint-brush orange f1 pa3" />
 					</Category>
 					<Category>
 						<i className="fas fa-guitar orange f1 pa3" />

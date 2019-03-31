@@ -15,7 +15,8 @@ export class Search extends Component {
                     aria-describedby="name-desc"
                 />
                 <button id="name-desc" className="f6 grow ba br3 ph3 pv3 mb2 b--yellow w-30 bg-yellow shadow-5">
-                    <i className="fas fa-search f2 orange tc" />
+                    <i className="fas fa-search f2 orange tc" /> 
+                    {/* search icon fas fa-search */}
                 </button>
             </div>
         </form>
