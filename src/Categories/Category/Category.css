@@ -1,0 +1,17 @@
+.caption {
+    display: block;
+}
+
+.categorie-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: normal;
+    text-align: center;
+    color: #919191;
+}
+
+.justify-content {
+    justify-content: center;
+}
