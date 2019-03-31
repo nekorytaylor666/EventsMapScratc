@@ -5,7 +5,7 @@ export class Search extends Component {
   render() {
     return (
     <div>
-        <form className="pa4 black-80">
+        <form className="">
             <div className="measure flex">
                 <input
                     id="name"

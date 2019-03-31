@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Search from './Search/Search'
-import 'tachyons'
+import Search from './Search/Search';
+import 'tachyons';
+import Categories from './Categories/Categories';
+
 class App extends Component {
-  render() {
-    return (
-      <Search></Search>
-    );
-  }
+	render() {
+		return (
+			<div>
+				{/* w-400-px is the additional class use it to set width 400 px */}
+				<div className="pa3 flex flex-column w-400-px">
+					<Search />
+					<Categories /> 
+				</div>
+			</div>
+		);
+	}
 }
 
 export default App;
