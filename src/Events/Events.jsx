@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Event from './Event/Event';
+
 export class Events extends Component {
 	state = {
 		events: [
@@ -82,7 +83,10 @@ export class Events extends Component {
 		);
 		return(
             <div>
-                {EventsList}
+				<article class="mw6 mw6-ns br3 hidden ba b--black-10 mv2 shadow-4">
+
+					{EventsList}
+				</article>
             </div>
         );
 	}
