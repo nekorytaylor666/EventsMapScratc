@@ -16,6 +16,7 @@ export class Events extends Component {
 
 	render() {
 		let EventsListToShow = null;
+		let ButtonMessage = "Click to see the events";
 		if (this.state.ShowEvents) {
 			EventsListToShow = (
 				<div>
@@ -34,6 +35,7 @@ export class Events extends Component {
 					})}
 				</div>
 			);
+			ButtonMessage = "Click to collapse the events"
 		}
 		return (
 			<div>
@@ -43,7 +45,7 @@ export class Events extends Component {
 						href="#0"
 						onClick={this.ToggleEventsHandler}
 					>
-						Click to see the events
+						{ButtonMessage}
 					</a>
 					{EventsListToShow}
 				</article>

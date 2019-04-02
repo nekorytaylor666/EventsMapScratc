@@ -10,7 +10,7 @@ export class Search extends Component {
                 <input
                     id="name"
                     className="input-reset ba bw3 b--yellow pa3 mb2 w-80 mr2 br3 shadow-5"
-                    placeholder="Что я хочу посмотреть..."
+                    placeholder="What i want to see..."
                     type="text"
                     aria-describedby="name-desc"
                 />

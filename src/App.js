@@ -5,19 +5,18 @@ import Search from './Search/Search';
 import 'tachyons';
 import Categories from './Categories/Categories';
 import Events from './Events/Events';
-import Map from './Map/Map'
+import Map from './Map/Map';
 class App extends Component {
 	render() {
 		return (
-			<div>
+			<div className="mw6 w-450-px">
 				{/* w-400-px is the additional class use it to set width 400 px */}
-				<div className="mw6 pa3 w-400-px">
+				<div className="ml2 mt2">
 					<Search />
 					<Categories />
 					<Events />
-					<Map></Map>
-
 				</div>
+				<Map />
 			</div>
 		);
 	}
