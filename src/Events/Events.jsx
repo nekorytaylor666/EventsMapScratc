@@ -1,94 +1,54 @@
 import React, { Component } from 'react';
 import Event from './Event/Event';
+import './Events.css';
+import EventsList from './Events_initial_conf';
 
 export class Events extends Component {
 	state = {
-		events: [
-			{
-				id: 1,
-				title: 'Guitar evening',
-				time: 1554026402,
-				address: {
-					name: 'baraeva 13',
-					coordinates: {
-						lat: 51.177601,
-						lng: 71.432999
-					}
-				},
-				desc:
-					"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-			},
-			{
-				id: 2,
-				title: 'Guitar evening',
-				time: 1554026402,
-				address: {
-					name: 'baraeva 13',
-					coordinates: {
-						lat: 51.177601,
-						lng: 71.432999
-					}
-				},
-				desc:
-					"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-			},
-			{
-				id: 3,
-				title: 'Guitar evening',
-				time: 1554026402,
-				address: {
-					name: 'baraeva 13',
-					coordinates: {
-						lat: 51.177601,
-						lng: 71.432999
-					}
-				},
-				desc:
-					"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-			},
-			{
-				id: 4,
-				title: 'lel evening',
-				time: 1554026402,
-				address: {
-					name: 'baraeva 13',
-					coordinates: {
-						lat: 51.177601,
-						lng: 71.432999
-					}
-				},
-				desc:
-					"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-			}
-		]
+		Events: EventsList,
+		ShowEvents: false
 	};
+
+	ToggleEventsHandler = () => {
+		const doesShow = this.state.ShowEvents;
+		this.setState({ ShowEvents: !doesShow });
+	};
+
 	render() {
-		let EventsList = null;
-		EventsList = (
+		let EventsListToShow = null;
+		if (this.state.ShowEvents) {
+			EventsListToShow = (
+				<div>
+					{this.state.Events.map((event) => {
+						return (
+							<div>
+								<Event
+									key={event.id}
+									title={event.title}
+									address={event.address.name}
+									time={event.time}
+									desc={event.desc}
+								/>
+							</div>
+						);
+					})}
+				</div>
+			);
+		}
+		return (
 			<div>
-				{this.state.events.map((event) => {
-					return (
-						<div>
-							<Event
-								key={event.id}
-								title={event.title}
-								address={event.address.name}
-								time={event.time}
-								desc={event.desc}
-							/>
-						</div>
-					);
-				})}
+				<article class="br3 bg-white hidden ba b--black-10 mv2 shadow-4">
+					<a
+						class="f4 grow no-underline br-pill ph3 pv2 mb2 dib w-80 tc orange b bg-yellow center-for-button"
+						href="#0"
+						onClick={this.ToggleEventsHandler}
+					>
+						Click to see the events
+					</a>
+					{EventsListToShow}
+				</article>
 			</div>
 		);
-		return(
-            <div>
-				<article class="mw6 mw6-ns br3 hidden ba b--black-10 mv2 shadow-4">
-
-					{EventsList}
-				</article>
-            </div>
-        );
 	}
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Events.css';
+import './Event.css';
 
 const Event = (props) => {
 	// FIX eventdate not working, said this is an object
