@@ -42,7 +42,7 @@ export class Events extends Component {
 			backgroundClassTachyon="bg-light-yellow";
 			scrollStyles =  {
 				width: "440px",
-				height: "500px",
+				height: "490px",
 				overflow: "scroll",
 				/* overflow-y: hidden; */
 				overflowX: "hidden",
