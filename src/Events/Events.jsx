@@ -15,8 +15,10 @@ export class Events extends Component {
 	};
 
 	render() {
+
 		let EventsListToShow = null;
 		let ButtonMessage = "Click to see the events";
+		let scrollStyles = null;
 		if (this.state.ShowEvents) {
 			EventsListToShow = (
 				<div>
@@ -35,11 +37,19 @@ export class Events extends Component {
 					})}
 				</div>
 			);
-			ButtonMessage = "Click to collapse the events"
+			ButtonMessage = "Click to collapse the events";
+			scrollStyles =  {
+				width: "440px",
+				height: "500px",
+				overflow: "scroll",
+				/* overflow-y: hidden; */
+				overflowX: "hidden",
+			};
 		}
+		
 		return (
 			<div>
-				<article class="br3 bg-white hidden ba b--black-10 mv2 shadow-4">
+				<article  className="br3 bg-white hidden ba b--black-10 mv2 shadow-4">
 					<a
 						class="f4 grow no-underline br-pill ph3 pv2 mb2 dib w-80 tc orange b bg-yellow center-for-button"
 						href="#0"
@@ -47,7 +57,9 @@ export class Events extends Component {
 					>
 						{ButtonMessage}
 					</a>
+					<div id ="events-bar" style={scrollStyles}> 
 					{EventsListToShow}
+					</div>
 				</article>
 			</div>
 		);

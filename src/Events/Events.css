@@ -4,3 +4,24 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+#events-bar::-webkit-scrollbar {
+    width: 6px;
+    background-color: white;
+}
+
+
+/* #events-bar::-webkit-scrollbar-thumb {
+    background-color: orange;
+} */
+
+#events-bar::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: whites;
+}
+
+#events-bar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: orange;
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, .3);
+}
