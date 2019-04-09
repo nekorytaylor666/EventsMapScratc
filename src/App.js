@@ -9,9 +9,9 @@ import Map from './Map/Map';
 class App extends Component {
 	render() {
 		return (
-			<div className="mw6 w-450-px">
+			<div className=" mw6 w-450-px">
 				{/* w-400-px is the additional class use it to set width 400 px */}
-				<div className="ml2 mt2">
+				<div className="pos-rel z-index-3 ml2 mt2">
 					<Search />
 					<Categories />
 					<Events />
